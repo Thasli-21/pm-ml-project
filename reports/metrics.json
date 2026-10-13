@@ -1,0 +1,137 @@
+{
+  "effort_estimation": {
+    "Median baseline": {
+      "MAE": 3.254557152048038,
+      "RMSE": 4.927264216720755
+    },
+    "Ridge (TF-IDF)": {
+      "MAE": 2.923516161613611,
+      "RMSE": 4.042563988734044
+    },
+    "Random Forest (TF-IDF+SVD)": {
+      "MAE": 3.0986841781377907,
+      "RMSE": 4.309397583596291
+    },
+    "Gradient Boosting (TF-IDF+SVD)": {
+      "MAE": 3.006320474117487,
+      "RMSE": 4.213628583009805
+    },
+    "best_model": "Ridge (TF-IDF)",
+    "best_model_3fold_cv_MAE": {
+      "mean": 3.3097783187986685,
+      "std": 0.29386422904171366
+    },
+    "improvement_over_baseline_pct": 10.171613985211724
+  },
+  "nlp_complexity": {
+    "Majority baseline": {
+      "accuracy": 0.391593394810208,
+      "macro_F1": 0.18759952740535266,
+      "macro_precision": 0.13053113160340266,
+      "macro_recall": 0.3333333333333333
+    },
+    "Naive Bayes (Complement)": {
+      "accuracy": 0.5286296375723784,
+      "macro_F1": 0.5268294227259691,
+      "macro_precision": 0.534238234475744,
+      "macro_recall": 0.5432364405217588
+    },
+    "Logistic Regression": {
+      "accuracy": 0.5350632639931374,
+      "macro_F1": 0.5367209396959126,
+      "macro_precision": 0.534530465943322,
+      "macro_recall": 0.5421852963346799
+    },
+    "Linear SVM": {
+      "accuracy": 0.5380656229894918,
+      "macro_F1": 0.5396228034964304,
+      "macro_precision": 0.5376080972773355,
+      "macro_recall": 0.5431632786796098
+    },
+    "best_model": "Linear SVM"
+  },
+  "task_recommender": {
+    "team_routing_accuracy_weighted_kNN(k=10)": 0.8678962041604118,
+    "team_routing_accuracy_top1": 0.8200729144327686,
+    "majority_baseline_accuracy": 0.20544713703624276,
+    "n_projects(teams)": 16,
+    "note": "Public data has no assignee names; project is used as a proxy for team.",
+    "neighbour_mean_effort_MAE": 2.8680034312674243
+  },
+  "delay_prediction": {
+    "Majority baseline": {
+      "accuracy": 0.7864864864864864,
+      "precision": 0.0,
+      "recall": 0.0,
+      "F1": 0.0,
+      "ROC_AUC": 0.5
+    },
+    "Logistic Regression": {
+      "accuracy": 0.6924324324324325,
+      "precision": 0.3700384122919334,
+      "recall": 0.627124773960217,
+      "F1": 0.4654408804187357,
+      "ROC_AUC": 0.7248558982512487
+    },
+    "Random Forest": {
+      "accuracy": 0.8392277992277992,
+      "precision": 0.600648393751842,
+      "recall": 0.7370705244122966,
+      "F1": 0.6619032153296525,
+      "ROC_AUC": 0.8846857015023156
+    },
+    "Gradient Boosting": {
+      "accuracy": 0.8382239382239383,
+      "precision": 0.5975538730343622,
+      "recall": 0.7421338155515371,
+      "F1": 0.6620422648814325,
+      "ROC_AUC": 0.8834796055966428
+    },
+    "Gradient Boosting (tuned)": {
+      "accuracy": 0.8416216216216216,
+      "precision": 0.6050618010594467,
+      "recall": 0.7435804701627486,
+      "F1": 0.6672075288009086,
+      "ROC_AUC": 0.8853963874470576
+    },
+    "best_model": "Gradient Boosting (tuned)",
+    "best_params_GridSearch": {
+      "m__learning_rate": 0.1,
+      "m__max_depth": "None",
+      "m__max_iter": 150
+    },
+    "delayed_share_in_data": 0.21352340648987597,
+    "permutation_importance_AUC_drop": {
+      "RemainingDay": 0.21004355055345894,
+      "project": 0.11445887607293995,
+      "reporterrep": 0.02494625202292844,
+      "no_fixversion": 0.01779309891776102,
+      "no_issuelink": 0.01549599675443709,
+      "type": 0.01522536510362984,
+      "priority": 0.004020279441543017,
+      "no_affectversion": 0.0030123120108018985,
+      "no_blocking": 0.0006737064132712911,
+      "no_blockedby": 0.00014474003094646636
+    }
+  },
+  "risk_scoring": {
+    "spearman_corr_risk_vs_actual_delay_days": 0.4482248088696951,
+    "share_delayed_in_top10pct_risk": 0.6525096525096525,
+    "share_delayed_overall": 0.21351351351351353,
+    "avg_actual_delay_days_High": 72.09413580246914,
+    "avg_actual_delay_days_Medium": 13.36433868974042,
+    "avg_actual_delay_days_Low": 2.8422136422136424,
+    "level_thresholds_score": [
+      60.005791841226326,
+      85.22115180415854
+    ]
+  },
+  "data_summary": {
+    "story_point_tasks": 23313,
+    "story_point_projects": 16,
+    "story_points_capped_at_20": 814,
+    "delay_issues": 64747,
+    "delay_projects": 8,
+    "train_test_split": "80/20, random_state=42 (stratified)"
+  }
+}
